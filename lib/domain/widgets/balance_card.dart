@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class BalanceCard extends StatelessWidget {
   final String label;
   final String balance;
+  
   const BalanceCard({
     required this.label,
     required this.balance,
