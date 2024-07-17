@@ -29,6 +29,27 @@ class Service extends StatelessWidget {
                 )
               ],
             ),
+          ),
+          Container(
+            color: Colors.grey.shade900,
+            child: const CardSelect(
+              hintText: 'Elige un servicio',
+              label: 'Servicio',
+              items: [
+                DropdownMenuItem(
+                  value: 'cfe',
+                  child: Text('CFE'),
+                ),
+                DropdownMenuItem(
+                  value: 'xbox',
+                  child: Text('Xbox live'),
+                ),
+                DropdownMenuItem(
+                  value: 'totalplay',
+                  child: Text('Totalplay'),
+                )
+              ],
+            ),
           )
             
         ],
