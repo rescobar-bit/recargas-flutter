@@ -14,19 +14,33 @@ class _ReportsIndexState extends State <ReportsIndex> {
   String currentStatus = '';
   String currentPeriod = '';
 
+  void changeStatus(String newStatus) => setState(() => currentStatus = newStatus);
+  void changePeriod(String newPeriod) => setState(() => currentPeriod = newPeriod);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Reportes'),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 14),
-            child: BottomSheetFilters(icon: Icon(Icons.filter_alt_sharp)),
+            padding: const EdgeInsets.only(right: 14),
+            child: BottomSheetFilters(
+              icon: const Icon(Icons.filter_alt_sharp),
+              changeStatus: changeStatus,
+              changePeriod: changePeriod,
+            ),
           )
         ],
       ),
-      body: Container(),
+      body: SizedBox(
+        child: Column(
+          children: [
+            Text("Estatus: $currentStatus"),
+            Text("Periodo: $currentPeriod"),
+          ],
+        ),
+      ),
     );
   }
 }
