@@ -30,7 +30,7 @@ class Recharge extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            color: Colors.grey.shade900,
+            color: const Color.fromARGB(255, 46, 45, 45),
             child: const CardSelect(
               hintText: 'Elige una compañia',
               label: 'Compañia',
@@ -52,7 +52,7 @@ class Recharge extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            color: Colors.grey.shade900,
+            color: const Color.fromARGB(255, 46, 45, 45),
             child: const CardSelect(
               hintText: 'Elige el monto',
               label: 'Monto',
@@ -82,7 +82,7 @@ class Recharge extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            color: Colors.grey.shade900,
+            color: const Color.fromARGB(255, 46, 45, 45),
             child: FormBuilderTextField(
               style: const TextStyle(fontSize: 20),
               name: 'number',
@@ -107,8 +107,8 @@ class Recharge extends StatelessWidget {
               onPressed: () {
               },
               child: const Text(
-                'Generar recarga',
-                style: TextStyle(fontSize: 20),
+                'Enviar',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               )
             ),
           )

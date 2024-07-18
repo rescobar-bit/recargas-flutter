@@ -29,7 +29,7 @@ class _ServiceState extends State<Service> {
         children: [
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            color: Colors.grey.shade900,
+            color: const Color.fromARGB(255, 46, 45, 45),
             child: const CardSelect(
               hintText: 'Elige un servicio',
               label: 'Servicio',
@@ -51,7 +51,7 @@ class _ServiceState extends State<Service> {
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            color: Colors.grey.shade900,
+            color: const Color.fromARGB(255, 46, 45, 45),
             child: FormBuilderTextField(
               controller: codeReference,
               style: const TextStyle(fontSize: 20),
@@ -84,8 +84,9 @@ class _ServiceState extends State<Service> {
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            color: Colors.grey.shade900,
+            color: const Color.fromARGB(255, 46, 45, 45),
             child: FormBuilderTextField(
+              keyboardType: TextInputType.number,
               onChanged: (value) {
                 double newTotal = 0;
                 setState(() {
@@ -107,7 +108,7 @@ class _ServiceState extends State<Service> {
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            color: Colors.grey.shade900,
+            color: const Color.fromARGB(255, 46, 45, 45),
             child: FormBuilderTextField(
               enabled: false,
               initialValue: '10',
@@ -125,7 +126,7 @@ class _ServiceState extends State<Service> {
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            color: Colors.grey.shade900,
+            color: const Color.fromARGB(255, 46, 45, 45),
             child: FormBuilderTextField(
               controller: total,
               enabled: false,
@@ -134,14 +135,29 @@ class _ServiceState extends State<Service> {
               decoration: const InputDecoration(
                 border: InputBorder.none,
                 labelText: 'Monto a pagar',
-                labelStyle: TextStyle(fontSize: 20),
+                labelStyle: TextStyle(fontSize: 20, color: Colors.white),
               ),
               validator: FormBuilderValidators.compose([
                 FormBuilderValidators.required()
               ]),
             )
           ),
-            
+          const SizedBox(height: 20,),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            width: double.infinity,
+            child: TextButton(
+              style: const ButtonStyle(
+                backgroundColor:  WidgetStatePropertyAll(Color(0xFF448CFB))
+              ),
+              onPressed: () {
+              },
+              child: const Text(
+                'Enviar',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              )
+            ),
+          )
         ],
       ),
     );
