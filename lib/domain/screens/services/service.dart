@@ -112,12 +112,12 @@ class _ServiceState extends State<Service> {
             child: FormBuilderTextField(
               enabled: false,
               initialValue: '10',
-              style: const TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20, color: Colors.white),
               name: 'commission',
               decoration: const InputDecoration(
                 border: InputBorder.none,
                 labelText: 'Monto a pagar',
-                labelStyle: TextStyle(fontSize: 20),
+                labelStyle: TextStyle(fontSize: 20, color: Colors.white),
               ),
               validator: FormBuilderValidators.compose([
                 FormBuilderValidators.required()
@@ -130,7 +130,7 @@ class _ServiceState extends State<Service> {
             child: FormBuilderTextField(
               controller: total,
               enabled: false,
-              style: const TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20, color: Colors.white),
               name: 'commission',
               decoration: const InputDecoration(
                 border: InputBorder.none,

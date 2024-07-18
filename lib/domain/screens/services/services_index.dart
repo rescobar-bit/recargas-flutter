@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recargas_beta2/domain/screens/services/history_services.dart';
 import 'package:recargas_beta2/domain/screens/services/service.dart';
 
 class ServicesIndex extends StatelessWidget {
@@ -16,6 +17,7 @@ class ServicesIndex extends StatelessWidget {
             child: Column(
               children: [
                 Service(),
+                HistoryServices()
               ],
             ),
           ),
