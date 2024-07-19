@@ -15,15 +15,17 @@ class BottomSheetFilters extends StatefulWidget {
   });
 
   @override
-  State < BottomSheetFilters > createState() => _BottomSheetFiltersState();
+  State <BottomSheetFilters> createState() => _BottomSheetFiltersState();
 }
 
-class _BottomSheetFiltersState extends State < BottomSheetFilters > {
+class _BottomSheetFiltersState extends State <BottomSheetFilters> {
+  String currentStatus = '';
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        showModalBottomSheet < void > (
+        showModalBottomSheet <void> (
           context: context,
           builder: (BuildContext context) {
             return SizedBox(
@@ -32,7 +34,7 @@ class _BottomSheetFiltersState extends State < BottomSheetFilters > {
                 padding: const EdgeInsets.only(top: 10),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: < Widget > [
+                    children: <Widget> [
                       const Text(
                           'Filtros',
                           textAlign: TextAlign.start,
@@ -43,7 +45,7 @@ class _BottomSheetFiltersState extends State < BottomSheetFilters > {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: FormBuilderDropdown(
-                              onChanged: (value) => widget.changeStatus(value.toString()),
+                              onChanged: (value) => setState(() => currentStatus = value!),
                               decoration: const InputDecoration(
                                   hintText: 'Estatus',
                                   border: InputBorder.none
@@ -76,6 +78,7 @@ class _BottomSheetFiltersState extends State < BottomSheetFilters > {
                         ),
                         InkWell(
                           onTap: () {
+                            if(currentStatus.isNotEmpty)widget.changeStatus(currentStatus.toString());
                             Navigator.pop(context);
                           },
                           child: Container(
