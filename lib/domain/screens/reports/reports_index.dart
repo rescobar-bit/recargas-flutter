@@ -15,14 +15,26 @@ class ReportsIndex extends StatefulWidget {
 }
 
 class _ReportsIndexState extends State <ReportsIndex> {
-  String currentStatus = '';
+  String currentStatus = 'all';
   String currentPeriod = '';
 
   void changeStatus(String newStatus) => setState(() => currentStatus = newStatus);
   void changePeriod(String newPeriod) => setState(() => currentPeriod = newPeriod);
 
+  List<Map<String, String>> filterData(){
+    return rechargesData.where((recharge) {
+      if(currentStatus == 'all') {
+        return recharge['status'] == 'success' || recharge['status'] == 'error';
+      } else {
+        return recharge['status'] == currentStatus;
+      }
+    }).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
+    List<Map<String, String>> data = filterData();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Reportes'),
@@ -48,7 +60,7 @@ class _ReportsIndexState extends State <ReportsIndex> {
               ),
             ),
             Column(
-              children: rechargesData.map((recharge) {
+              children: data.map((recharge) {
                 return Column(
                   children: [
                     InkWell(
