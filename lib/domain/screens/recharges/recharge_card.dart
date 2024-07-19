@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recargas_beta2/domain/widgets/status_card.dart';
+import 'package:intl/intl.dart';
 
 class RechargeCard extends StatelessWidget {
   final String company;
@@ -19,6 +20,9 @@ class RechargeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateTime parsedDate = DateFormat('dd/MM/yyyy').parse(date);
+    String formattedDate = DateFormat('EEEE, d MMMM yyyy', 'es_ES').format(parsedDate);
+
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 14),
       child: Row(
@@ -36,7 +40,7 @@ class RechargeCard extends StatelessWidget {
                 style: const TextStyle(fontSize: 20),
               ),
               Text(
-                date,
+                formattedDate,
                 style: const TextStyle(fontSize: 16),
               ),
               const SizedBox(height: 8, ),

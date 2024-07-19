@@ -14,7 +14,7 @@ class ServicesIndex extends StatelessWidget {
       body: Stack(
         children: [
           SingleChildScrollView(
-            padding: EdgeInsets.only(bottom: 20),
+            padding: EdgeInsets.only(bottom: 60),
             child: Column(
               children: [
                 Service(),
