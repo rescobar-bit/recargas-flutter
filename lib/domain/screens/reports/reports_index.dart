@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:recargas_beta2/data/recharges_data.dart';
 import 'package:recargas_beta2/domain/screens/recharges/recharge_card.dart';
 import 'package:recargas_beta2/domain/screens/recharges/recharge_details.dart';
@@ -23,11 +24,14 @@ class _ReportsIndexState extends State <ReportsIndex> {
 
   List<Map<String, String>> filterData(){
     return rechargesData.where((recharge) {
-      if(currentStatus == 'all') {
-        return recharge['status'] == 'success' || recharge['status'] == 'error';
-      } else {
-        return recharge['status'] == currentStatus;
+      bool filtered = false;
+      if (recharge['status'] == currentStatus || currentStatus == 'all') {
+        filtered = true;
       }
+      if (currentPeriod=='lastThreeDays') {
+        
+      }
+      return filtered;
     }).toList();
   }
 
