@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recargas_beta2/domain/widgets/status_card.dart';
 
 class RechargeCard extends StatelessWidget {
   final String company;
@@ -39,19 +40,8 @@ class RechargeCard extends StatelessWidget {
                 style: const TextStyle(fontSize: 16),
               ),
               const SizedBox(height: 8, ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(4)
-                    ),
-                    child: const Text(
-                      'Éxito',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w800
-                      ),
-                    ),
+                StatusCard(
+                  status: status,
                 )
             ],
           ),

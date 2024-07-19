@@ -14,7 +14,7 @@ class RechargesIndex extends StatelessWidget {
       body: Stack(
         children: [
           SingleChildScrollView(
-            padding: EdgeInsets.only(bottom: 50),
+            padding: EdgeInsets.only(bottom: 60),
             child: Column(
               children: [
                 Recharge(),
